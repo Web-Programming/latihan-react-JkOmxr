@@ -2,9 +2,9 @@ import React from "react";
 
 function Product() {
     const products = [
-        { id: "P001", nama: "Acer", harga: 2000000, deskripsi: "Harga Mantap", foto:"img/acer.jpeg"},
-        { id: "P002", nama: "Lenovo", harga: 3000000,deskripsi: "Barang Terjamin", foto:"img/lenovo.jpeg"},
-        { id: "P003", nama: "Asus", harga: 4000000, deskripsi:"Spek Gahar",foto:"img/asus.jpeg"},
+        { id: "P001", nama: "Acer", harga: 2000000, deskripsi: "Harga Murah", foto:"img/acer.jpeg"},
+        { id: "P002", nama: "Lenovo", harga: 3000000,deskripsi: "Barang Awet", foto:"img/lenovo.jpeg"},
+        { id: "P003", nama: "Asus", harga: 4000000, deskripsi:"Spek Gacor",foto:"img/asus.jpeg"},
     ];
     return(
         <table>
@@ -14,7 +14,7 @@ function Product() {
                     <th>ID</th>
                     <th>Nama</th>
                     <th>Harga</th>
-                    <th>deskripsi</th>
+                    <th>Deskripsi</th>
                 </tr>
             </thead>
             <tbody>
