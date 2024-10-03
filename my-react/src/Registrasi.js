@@ -25,15 +25,15 @@ function Registrasi() {
         <form onSubmit={{ handleSubmit }}>
             <label>
                 Nama:
-                <input type="text" value={nama} onChange={(e) => setNama(e.targeta.value)}/>
+                <input type="text" value={nama} onChange={(e) => setNama(e.target.value)}/>
             </label>
             <label>
                 Email:
-                <input type="email" value={email} onChange={(e) => setEmail(e.targeta.value)}/>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </label>
             <label>
                 Hp:
-                <input type="tel" value={hp} onChange={(e) => setHp(e.targeta.value)}/>
+                <input type="tel" value={hp} onChange={(e) => setHp(e.target.value)}/>
             </label>
             <input type="submit" value="Submit"/>
         </form>

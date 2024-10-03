@@ -8,7 +8,7 @@ function Hello(props){
 }
 
 Hello.defaultProps ={
-    name: "Kevin",
-    pesan: "Selamat datang Kevin"
+    name: "Admin",
+    pesan: "Selamat datang Admin"
 };
 export default Hello;
