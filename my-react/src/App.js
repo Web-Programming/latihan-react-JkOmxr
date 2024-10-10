@@ -36,7 +36,7 @@ function App() {
           </div>
 
         </nav>
-
+        <hr/>
         <div className='main'>
           <Routes>
             {

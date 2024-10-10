@@ -6,7 +6,7 @@ function Registrasi() {
     const [hp, setHp] = React.useState("");
 
     const handleSubmit = (event) => {
-        event.preventDefault(); // Typo diperbaiki di sini
+        event.preventDefault();
         // Kirim data ke server (logika server bisa ditambahkan di sini)
 
         alert(`
@@ -22,7 +22,7 @@ function Registrasi() {
     };
 
     return (
-        <form onSubmit={{ handleSubmit }}>
+        <form onSubmit={handleSubmit}>
             <label>
                 Nama:
                 <input type="text" value={nama} onChange={(e) => setNama(e.target.value)}/>
@@ -35,7 +35,7 @@ function Registrasi() {
                 Hp:
                 <input type="tel" value={hp} onChange={(e) => setHp(e.target.value)}/>
             </label>
-            <input type="submit" value="Submit"/>
+            <button type="submit">Submit</button>
         </form>
     );
 }

@@ -1,7 +1,5 @@
-export default function Blog() {
-    return(
-    <div>
-        <h1>This Is Setting Page</h1>
-        </div>
-    );
+export default function DashboardLayout() {
+  return (
+<hi> This Is Setting Page</hi>
+  );
 }
