@@ -1,54 +1,35 @@
-// import logo from './logo.svg';
-import { NavLink, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Hello from './Hello';
-import Product from './Product';
-import Registrasi from './Registrasi';
-import React from 'react';
-import routes from './route';
+import React, { useState } from 'react';
+import UsersList from './components/UsersList';
+import AddUserForm from './components/AddUserForm';
+import UpdateUserForm from './components/UpdateUserForm';
+import './styles/App.css';
 
 function App() {
+  const [users, setUsers] = useState([]);
+  const [editingUser, setEditingUser] = useState(null);
+
+  const handleAdd = (newUser) => {
+    setUsers(prevUsers => [...prevUsers, newUser]);
+  };
+
+  const handleEdit = (user) => {
+    setEditingUser(user);
+  };
+
+  const handleUpdate = (updatedUser) => {
+    setUsers(users.map(user => (user.id === updatedUser.id ? updatedUser : user)));
+    setEditingUser(null);
+  };
+
   return (
-    <React.Suspense fallback={<div>Loading ....</div>}>
-      <div className='App'>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <NavLink to="/" className="Navbar-brand">
-              Navbar
-            </NavLink>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id='navbarNav'>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <NavLink to="/" className="nav-link" aria-current="page">Home</NavLink>
-              </li>
-              <li class="nav-item">
-                <NavLink to="/product" className="nav-link">Product</NavLink>
-              </li>
-              <li class="nav-item">
-                <NavLink to="/register" className="nav-link">Register</NavLink>
-              </li>
-
-            </ul>
-          </div>
-
-        </nav>
-        <hr/>
-        <div className='main'>
-          <Routes>
-            {
-              routes.map((route, i) => {
-                const { path, Component } = route;
-                return <Route key={i} path={path} element={<Component />} />;
-              })
-            }
-          </Routes>
-        </div>
-      </div>
-    </React.Suspense>
+    <div className="App">
+      <UsersList users={users} onEdit={handleEdit} setUsers={setUsers} />
+      {editingUser ? (
+        <UpdateUserForm user={editingUser} onUpdate={handleUpdate} />
+      ) : (
+        <AddUserForm onAdd={handleAdd} />
+      )}
+    </div>
   );
 }
 
