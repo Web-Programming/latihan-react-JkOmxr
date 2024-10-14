@@ -1,3 +1,5 @@
+![alt text](image.png)
+
 # Axios API
 
 Project ini menampilkan bagaimana cara untuk menggunakan axios pada react/next.js
